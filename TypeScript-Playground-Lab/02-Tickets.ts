@@ -1,4 +1,4 @@
-class Tickets {
+class Ticket {
   destination: string;
   price: number;
   status: string;
@@ -12,10 +12,10 @@ class Tickets {
 
 function dataForTicket(array: string[], criteria: string) {
   const sortedTickets = array
-    .map((string) => string.split("|"))
+    .map((string) => string.split('|'))
     .map(
       ([destination, price, status]) =>
-        new Tickets(destination, Number(price), status)
+        new Ticket(destination, Number(price), status)
     )
     .sort((a, b) => a[criteria].localeCompare(b[criteria]));
 
@@ -25,19 +25,19 @@ function dataForTicket(array: string[], criteria: string) {
 
 dataForTicket(
   [
-    "Philadelphia|94.20|available",
-    "New York City|95.99|available",
-    "New York City|95.99|sold",
-    "Boston|126.20|departed",
+    'Philadelphia|94.20|available',
+    'New York City|95.99|available',
+    'New York City|95.99|sold',
+    'Boston|126.20|departed',
   ],
-  "destination"
+  'destination'
 );
 dataForTicket(
   [
-    "Philadelphia|94.20|available",
-    "New York City|95.99|available",
-    "New York City|95.99|sold",
-    "Boston|126.20|departed",
+    'Philadelphia|94.20|available',
+    'New York City|95.99|available',
+    'New York City|95.99|sold',
+    'Boston|126.20|departed',
   ],
-  "status"
+  'status'
 );
