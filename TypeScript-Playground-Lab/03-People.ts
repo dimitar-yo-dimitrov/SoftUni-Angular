@@ -2,7 +2,7 @@ abstract class Employee {
   public name: string;
   public age: number;
   public salary: number;
-  public tasks: Array<string>;
+  public tasks: string[];
 
   constructor(name: string, age: number) {
     this.name = name;
